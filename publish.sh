@@ -1,6 +1,8 @@
 #!/bin/sh
 set -x
 
+mkdir -p ~/.ssh 
+
 echo "$private_key" > ~/.ssh/aur
 
 echo "
