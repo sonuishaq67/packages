@@ -1,5 +1,5 @@
 #!/bin/sh
-set -x
+set -e -x
 
 mkdir -p ~/.ssh 
 
